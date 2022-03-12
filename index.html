@@ -4,72 +4,95 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Full on Flicks</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css"
-      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
-    <title>Full On Flicks</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/debug.css" /> -->
+    <style>
+      .hero {
+        background: black url(./assets/images/Hero\ 1.jpg) center / cover;
+      }
+    </style>
   </head>
+
   <body>
-    <div class="title-bar">
-      <div class="title-bar-left">
-        <button class="menu-icon" type="button"></button>
-        <span class="title-bar-title">Menu</span>
-      </div>
-      <div class="title-bar-right">
-        <button class="menu-icon" type="button"></button>
-      </div>
-    </div>
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="dropdown menu" data-dropdown-menu>
-          <li class="menu-text">Full on Flicks</li>
-          <li class="has-submenu">
-            <a href="#0">One</a>
-            <ul class="submenu menu vertical" data-submenu>
-            </ul>
-          </li>
-          <li><a href="#0">Two</a></li>
-          <li><a href="#0">Three</a></li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><input type="search" placeholder="Search" /></li>
-          <li><button type="button" class="button">Search</button></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <h1 class="" id="movie-title">Movie Tittle</h1>
-      
-      
-      
-      
-    </div>
-    <div>
-      <div class="media-object">
-        <div class="media-object-section">
-          <img src="https://placeimg.com/200/200/people" alt="movie image" />
-        </div>
-        <div class="media-object-section">
-          <h4>Movies details</h4>
-          <p>cast member</p>
-          <p>director</p>
-          <p>Made Date</p>
-          <h4>Stream on</h4>
-          <p>show available platform</p>
+    <section class="hero is-fullheight">
+      <div class="hero-head">
+        <div class="columns is-marginless is-mobile heading has-text-weight-bold">
+          <div class="column left">
+            <p
+              class="navbar-item title is-3 is-spaced has-text-white-bis has-text-weight-bold"
+            >
+              Full on Flicks
+            </p>
+            <figure class="image is-96x96">
+              <img
+                class="is-rounded"
+                src="./assets/images/logo.png"
+                alt="movie logo"
+              />
+            </figure>
+          </div>
+          <div class="column center">
+            <input
+              type="text"
+              placeholder="Search Movie by Name"
+              class="input navbar-ite has-text-black is-widescreen is-medium has-text-black"
+            />
+          </div>
+          <div class="column right is-gapless is-multiline is-mobile">
+            <div class="column is-one-quarter">
+            <button
+              class="button navbar-item has-text-whitehas-text-primary-light is-info is-hovered is-rounded is-medium is-one-quarter"
+            >
+            Search
+            </button></div>
+            <div>
+              <button
+              class="button navbar-item has-text-white has-text-primary-light is-link is-hovered is-rounded is-medium is-one-quarter"
+            >
+            Choose for Me
+            </button>
+          </div>
+          </div>
         </div>
       </div>
-    </div>
-    <img
-    data-interchange="[assets/img/interchange/small.jpg, small], [assets/img/interchange/medium.jpg, medium], [assets/img/interchange/large.jpg, large]"
-    src="#"
-    alt=""
-    />
+      <header class="hero-body">
+        <div class="columns">
+          <div class="column is-overlay has-text-centered"  style="top: 150px">
+            <!-- movieTitleEl -->
+            <h1 id="movie-title" class="bd-notification title has-text-link-light has-text-weight-bold is-1"><h1/>
+            <div class="columns is-mobile">
+
+              <div class="column">
+                <!-- posterEL -->
+                <img class="has-ratio" width="370" height="250" frameboarder="0" src="" alt="movie logo" id="poster"/>
+              </div>
+              <div class="column is-half container has-text-left has-background-white-ter" style="top: 10px; right: 200px;">
+              <div class="bd-notification content is-medium">
+                <h2 class="subtitle has-text-info ">Plot</h2>
+              <p id="plot" class="is-size-5"></p>
+              <h3>Cast</h3>
+              <ul>
+                <li>Name 1</li>
+                <li>Name 2</li>
+              </ul>
+              <h2 class="subtitle has-text-info">Where to Watch</h2>
+              <ul>
+                <li>Hulu</li>
+                <li>Netflix</li>
+                <li>Disney Plus</li>
+              </ul>
+            </div>
+              </div>
+            </div>
+          </div>
+      </header>
+    </section>
     <script src="./assets/js/script.js"></script>
   </body>
-  </html>
+</html>
   
