@@ -23,40 +23,25 @@
       <div class="hero-head">
         <div class="columns is-marginless is-mobile heading has-text-weight-bold">
           <div class="column left">
-            <p
-              class="navbar-item title is-3 is-spaced has-text-white-bis has-text-weight-bold"
-            >
-              Full on Flicks
-            </p>
+            <!-- page title -->
+            <h1 class="navbar-item title is-2 is-spaced has-text-white-bis has-text-weight-bold">Full on Flicks</h1>
             <figure class="image is-96x96">
-              <img
-                class="is-rounded"
-                src="./assets/images/logo.png"
-                alt="movie logo"
-              />
+              <!-- logo img -->
+              <img class="is-rounded" src="./assets/images/logo.png" alt="movie logo"/>
             </figure>
           </div>
           <div class="column center">
-            <input
-              type="text"
-              placeholder="Search Movie by Name"
-              class="input navbar-ite has-text-black is-widescreen is-medium has-text-black"
-            />
+            <input id="search-bar" type="text" placeholder="Search for a Movie or TV Series" class="input navbar-ite has-text-black is-widescreen is-medium has-text-black"/>
+            <div class="column is-one-quarter">
+              <!-- search btn -->
+              <button id="search-btn" class="button navbar-item has-text-white has-text-primary-light is-info is-hovered is-rounded is-medium is-one-quarter">Search</button>
+            </div>
           </div>
           <div class="column right is-gapless is-multiline is-mobile">
-            <div class="column is-one-quarter">
-            <button
-              class="button navbar-item has-text-whitehas-text-primary-light is-info is-hovered is-rounded is-medium is-one-quarter"
-            >
-            Search
-            </button></div>
             <div>
-              <button
-              class="button navbar-item has-text-white has-text-primary-light is-link is-hovered is-rounded is-medium is-one-quarter"
-            >
-            Choose for Me
-            </button>
-          </div>
+              <!-- choose for me btn -->
+              <button class="button navbar-item has-text-white has-text-primary-light is-link is-hovered is-rounded is-medium is-one-quarter">Choose for Me</button>
+            </div>
           </div>
         </div>
       </div>
@@ -64,32 +49,23 @@
         <div class="columns">
           <div class="column is-overlay has-text-centered"  style="top: 150px">
             <!-- movieTitleEl -->
-            <h1 id="movie-title" class="bd-notification title has-text-link-light has-text-weight-bold is-1"><h1/>
+            <h1 id="movie-title" class="bd-notification title has-text-link-light has-text-weight-bold has-background-danger-dark is-1"><h1/>
             <div class="columns is-mobile">
-
               <div class="column">
                 <!-- posterEL -->
                 <img class="has-ratio" width="370" height="250" frameboarder="0" src="" alt="movie logo" id="poster"/>
               </div>
               <div class="column is-half container has-text-left has-background-white-ter" style="top: 10px; right: 200px;">
-              <div class="bd-notification content is-medium">
-                <h2 class="subtitle has-text-info ">Plot</h2>
-              <p id="plot" class="is-size-5"></p>
-              <h3>Cast</h3>
-              <ul>
-                <li>Name 1</li>
-                <li>Name 2</li>
-              </ul>
-              <h2 class="subtitle has-text-info">Where to Watch</h2>
-              <ul>
-                <li>Hulu</li>
-                <li>Netflix</li>
-                <li>Disney Plus</li>
-              </ul>
-            </div>
+                <div class="bd-notification content">
+                  <h2 class="subtitle has-text-info ">Plot</h2>
+                  <p id="plot" class="is-size-5"></p>
+                  <h2>Cast</h2> <!-- change this sectiont to be 1 of 3 columns with info-->
+
+                </div>
               </div>
             </div>
           </div>
+        </div>
       </header>
     </section>
     <script src="./assets/js/script.js"></script>

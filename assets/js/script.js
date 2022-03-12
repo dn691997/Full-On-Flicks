@@ -4,10 +4,22 @@ var movieTitleEl = document.getElementById("movie-title");
 var posterEl = document.getElementById("poster");
 var plotEl = document.getElementById("plot");
 var castListEl = document.getElementById("cast-list");
+var searchInputEl = document.getElementById("search-bar");
+var searchBtn = document.getElementById("search-btn");
+var randomizerBtn = document.getElementById("random-btn");
 
+var getSearchTerm = function () {
+    var searchTerm = searchInputEl.value;
+    searchInputEl.value = "";
+    if (searchTerm) {
+        getTitleId(searchTerm)
+    } else {
+        alert("Please enter a valid search")
+    }
+}
 
 var getTitleId = function (searchTerm) {
-    var apiURL = "https://imdb-api.com/en/API/SearchTitle/k_ix11kdvq/wedding crashers";
+    var apiURL = "https://imdb-api.com/en/API/SearchTitle/k_ix11kdvq/" + searchTerm;
 
     fetch(apiURL)
     .then(function (response) {
@@ -45,4 +57,4 @@ var getMovieInfo = function (titleId) {
 
 // "name" external link for <a> https://www.imdb.com/name/ nm0229694 /
 
-getTitleId("words");
+getTitleId("Jumanji");
