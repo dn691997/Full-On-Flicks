@@ -56,5 +56,6 @@ var getMovieInfo = function (titleId) {
 }
 
 // "name" external link for <a> https://www.imdb.com/name/ nm0229694 /
+// <img src="https://imdb-api.com/images/original/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_Ratio1.0000_AL_.jpg" alt="Leonardo DiCaprio" width="128px"/>
 
-getTitleId("Jumanji");
+// getTitleId("Inception");

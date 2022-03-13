@@ -5,42 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Full on Flicks</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Montserrat:wght@200;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- <link rel="stylesheet" href="./assets/css/debug.css" /> -->
-    <style>
+    <!-- <style>
       .hero {
         background: black url(./assets/images/Hero\ 1.jpg) center / cover;
       }
-    </style>
+    </style> -->
   </head>
 
   <body>
     <section class="hero is-fullheight">
       <div class="hero-head">
-        <div class="columns is-marginless is-mobile heading has-text-weight-bold">
-          <div class="column left">
+        <div class="columns is-marginless is-vcentered is-mobile has-text-weight-bold">
+          <div class="column is-3">
             <!-- page title -->
-            <h1 class="navbar-item title is-2 is-spaced has-text-white-bis has-text-weight-bold">Full on Flicks</h1>
-            <figure class="image is-96x96">
-              <!-- logo img -->
-              <img class="is-rounded" src="./assets/images/logo.png" alt="movie logo"/>
-            </figure>
+            <h1 class="title is-1 has-text-white-bis has-text-weight-bold center">🍿 Full On Flicks 🎥</h1>
           </div>
-          <div class="column center">
-            <input id="search-bar" type="text" placeholder="Search for a Movie or TV Series" class="input navbar-ite has-text-black is-widescreen is-medium has-text-black"/>
-            <div class="column is-one-quarter">
-              <!-- search btn -->
-              <button id="search-btn" class="button navbar-item has-text-white has-text-primary-light is-info is-hovered is-rounded is-medium is-one-quarter">Search</button>
+          <div class="column is-6">
+            <div class="columns">
+              <!-- input field -->
+              <input id="search-bar" type="text" placeholder="Search for a Movie or TV Series" class="input has-text-black is-medium is-9"/>
+              <div class="is-3">
+                <!-- search btn -->
+                <button id="search-btn" class="button navbar-item has-text-white has-text-primary-light is-danger is-medium is-12">Search</button>
+              </div>
             </div>
           </div>
-          <div class="column right is-gapless is-multiline is-mobile">
-            <div>
+          <div class="column is-3">
+            <div class="columns">
               <!-- choose for me btn -->
-              <button class="button navbar-item has-text-white has-text-primary-light is-link is-hovered is-rounded is-medium is-one-quarter">Choose for Me</button>
+              <button id="randomizer-btn" class="button column is-black has-text-danger-dark has-text-primary-light is-large is-half is-offset-one-quarter">Choose for Me</button>
             </div>
           </div>
         </div>
@@ -49,17 +47,69 @@
         <div class="columns">
           <div class="column is-overlay has-text-centered"  style="top: 150px">
             <!-- movieTitleEl -->
-            <h1 id="movie-title" class="bd-notification title has-text-link-light has-text-weight-bold has-background-danger-dark is-1"><h1/>
+            <h1 id="movie-title" class="title has-text-white has-text-weight-bold is-1">Inception<h1/>
             <div class="columns is-mobile">
-              <div class="column">
+              <div class="column is-4">
                 <!-- posterEL -->
-                <img class="has-ratio" width="370" height="250" frameboarder="0" src="" alt="movie logo" id="poster"/>
+                <img class="has-ratio" width="370" height="250" frameboarder="0" src="" alt="Movie Poster" id="poster"/>
               </div>
-              <div class="column is-half container has-text-left has-background-white-ter" style="top: 10px; right: 200px;">
-                <div class="bd-notification content">
-                  <h2 class="subtitle has-text-info ">Plot</h2>
-                  <p id="plot" class="is-size-5"></p>
-                  <h2>Cast</h2> <!-- change this sectiont to be 1 of 3 columns with info-->
+              <div class="column is-8 container has-text-left main-info" style="top: 10px; right: 200px;">
+                <div class="container">
+                  <h2 class="subtitle has-text-danger-dark has-text-weight-bold is-3">Plot</h2>
+                  <p id="plot" class="is-size-5 has-text-white-bis"></p>
+                  <div class="columns">
+                    <div class="column">
+                      <h2 class="subtitle has-text-danger-dark has-text-weight-bold is-size-3">Cast</h2>
+                      <div class="columns is-flex-wrap-wrap is-justify-content-space-evenly">
+                        <a href="https://www.imdb.com/name/nm0000138/" target="_blank">
+                          <figure>
+                            <img src="https://imdb-api.com/images/original/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_Ratio1.0000_AL_.jpg" alt="Leonardo DiCaprio" width="128px"/>
+                            <figcaption>Leonardo<br/>DiCaprio</figcaption>
+                          </figure>
+                        </a>
+                        <a href="https://www.imdb.com/name/nm0330687/" target="_blank">
+                          <figure>
+                            <img src="https://imdb-api.com/images/original/MV5BMTY3NTk0NDI3Ml5BMl5BanBnXkFtZTgwNDA3NjY0MjE@._V1_Ratio1.0000_AL_.jpg" alt="Leonardo DiCaprio" width="128px"/>
+                            <figcaption>Joseph<br/>Gordon-Levitt</figcaption>
+                          </figure>
+                        </a>
+                        <a href="https://www.imdb.com/name/nm0680983/" target="_blank">
+                          <figure>
+                            <img src="https://imdb-api.com/images/original/MV5BYWY0NzFmYjAtYzMwNC00ODc3LWI2ZWEtOTU3YTM0Y2ZiNTM5XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_Ratio1.0000_AL_.jpg" alt="Leonardo DiCaprio" width="128px"/>
+                            <figcaption>Elliot<br/>Page</figcaption>
+                          </figure>
+                        </a>
+                        <a href="https://www.imdb.com/name/nm0913822/" target="_blank">
+                          <figure>
+                            <img src="https://imdb-api.com/images/original/MV5BMTQzMTUzNjc4Nl5BMl5BanBnXkFtZTcwMTUyODU2Mw@@._V1_Ratio1.0000_AL_.jpg" alt="Leonardo DiCaprio" width="128px"/>
+                            <figcaption>Ken<br/>Watanabe</figcaption>
+                          </figure>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <h2 class="subtitle has-text-danger-dark has-text-weight-bold is-size-3">Info</h2>
+                      <h4 class="subtitle has-text-grey-lighter is-size-5">Direction:</h4>
+                      <div class="content">
+                        <ul id="directors-list">
+                          <li class="has-text-white-bis is-size-6">Christopher Nolan</li>
+                        </ul>
+                      </div>
+                      <h4 class="subtitle has-text-grey-lighter is-size-5">Writers:</h4>
+                      <!-- writers list container -->
+                      <div class="content">
+                        <ul id="writers-list">
+                          <li class="has-text-white-bis is-size-6">Christopher Nolan</li>
+                        </ul>
+                      </div>
+                      <h4 class="subtitle has-text-grey-lighter is-size-5">Producers:</h4>
+                      <div class="content">
+                        <ul id="producers-list">
+                          <li class="has-text-white-bis is-size-6">Christopher Nolan</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
 
                 </div>
               </div>
