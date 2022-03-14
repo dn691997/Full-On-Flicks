@@ -18,8 +18,8 @@
   </head>
 
   <body>
-    <section class="hero is-fullheight">
-      <div class="hero-head">
+    <section class="is-fullheight">
+      <div class="">
         <div class="columns is-marginless is-vcentered is-mobile has-text-weight-bold">
           <div class="column is-3">
             <!-- page title -->
@@ -43,21 +43,24 @@
           </div>
         </div>
       </div>
-      <header class="hero-body">
+      <header class="">
         <div class="columns">
           <div class="column is-overlay has-text-centered"  style="top: 150px">
             <!-- movieTitleEl -->
-            <h1 id="movie-title" class="title has-text-white has-text-weight-bold is-1">Inception<h1/>
+            <h1 id="movie-title" class="title has-text-white has-text-weight-bold is-1">Inception (2010)<h1/>
             <div class="columns is-mobile">
               <div class="column is-4">
                 <!-- posterEL -->
-                <img class="has-ratio" width="370" height="250" frameboarder="0" src="" alt="Movie Poster" id="poster"/>
+                <img class="has-ratio" width="600" height="250" frameboarder="0" src="https://imdb-api.com/images/original/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_Ratio0.6762_AL_.jpg" alt="Movie Poster" id="poster"/>
               </div>
-              <div class="column is-8 container has-text-left main-info" style="top: 10px; right: 200px;">
-                <div class="container">
+              <div class="column is-8 container has-text-left" style="top: 10px; right: 200px;">
+                <div class="container main-info">
                   <h2 class="subtitle has-text-danger-dark has-text-weight-bold is-3">Plot</h2>
-                  <p id="plot" class="is-size-5 has-text-white-bis"></p>
+                  <p id="tagline" class="is-size-5 has-text-white-bis"><i>"Your mind is the scene of the crime"</i></p>
+                  <!-- plot paragraph -->
+                  <p id="plot" class="is-size-5 has-text-white-bis">Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible, inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea, but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming.</p>
                   <div class="columns">
+                    <!-- append cast to this next element -->
                     <div class="column">
                       <h2 class="subtitle has-text-danger-dark has-text-weight-bold is-size-3">Cast</h2>
                       <div class="columns is-flex-wrap-wrap is-justify-content-space-evenly">
@@ -102,15 +105,16 @@
                           <li class="has-text-white-bis is-size-6">Christopher Nolan</li>
                         </ul>
                       </div>
-                      <h4 class="subtitle has-text-grey-lighter is-size-5">Producers:</h4>
-                      <div class="content">
-                        <ul id="producers-list">
-                          <li class="has-text-white-bis is-size-6">Christopher Nolan</li>
-                        </ul>
-                      </div>
+                      <h4 id="rating" class="subtitle has-text-grey-lighter is-size-4 has-text-weight-bold">PG-13</h4>
+                      <h4 id="runtime" class="subtitle has-text-grey-lighter is-size-5">Runtime: <span class="has-text-weight-bold">2h 28min</span></h4>
+                      <h4 id="metacritic" class="subtitle has-text-grey-lighter is-size 5">MetaCritic Score: <span class="has-text-weight-bold">74</span></h4>
+                      <!-- add more info items from json -->
                     </div>
                   </div>
 
+                </div>
+                <div class="container main-info">
+                  <h3 class="subtitle has-text-danger-dark has-text-weight-bold is-3">Where to watch</h3>
                 </div>
               </div>
             </div>
