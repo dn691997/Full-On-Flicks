@@ -28,6 +28,11 @@ a {
     margin: .2rem;
 }
 
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
 .main-info {
     border-radius: 9px;
     background-image: linear-gradient(319deg, rgba(40,9,9,0.79) 0%, rgba(0,0,0,0.79) 100%);
@@ -114,10 +119,10 @@ p {
 }
 
 /* class for btns of random services */
-.other-service {
+/* .other-service {
     background: linear-gradient(146deg, rgba(41,41,41,1) 23%, rgba(0,0,0,1) 49%, rgba(43,43,43,1) 70%);
     color: white;
-}
+} */
 
 @media screen and (max-width: 1435px) {
     header {

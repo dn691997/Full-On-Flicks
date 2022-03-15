@@ -1,4 +1,5 @@
-// regular api key = k_ix11kdvq
+// imdb regular api key = k_ix11kdvq
+// watchmode api key = XtDVqWrPdNevd0HMRCFzh8nSvnBpjdpVoazNV42f
 
 // dom variables
 var movieTitleEl = document.getElementById("movie-title");
@@ -39,6 +40,7 @@ var getTitleId = function (searchTerm) {
             response.json().then(function (data) {
                 var titleId = data.results[0].id
                 getTitleInfo(titleId);
+                getTitleBtns(titleId);
             })
         } else {
             console.log("Error: There was a problem with your request");
@@ -61,7 +63,11 @@ var getTitleInfo = function (titleId) {
                 posterEl.setAttribute("src", data.image)
                 movieTitleEl.textContent = data.fullTitle;
                 plotEl.textContent = data.plot;
-                taglineEl.textContent = '"' + data.tagline + '"';
+                if (data.tagline) {
+                    taglineEl.textContent = '"' + data.tagline + '"';
+                } else {
+                    taglineEl.textContent = "";
+                }
                 
 
                 
@@ -139,6 +145,7 @@ var randomNumber = function () {
         arrayNumber = 1;
     }
     // if even, random movie
+    // https://www.programiz.com/javascript/examples/even-odd
     if (arrayNumber % 2 == 0) {
         getRandomMovie(arrayNumber);
     } else {
@@ -174,6 +181,201 @@ var getRandomTV = function (number) {
     })
 }
 
+var getTitleBtns = function (titleId) {
+    var apiUrl = "https://api.watchmode.com/v1/title/" + titleId + "/sources/?apiKey=XtDVqWrPdNevd0HMRCFzh8nSvnBpjdpVoazNV42f";
+
+    fetch(apiUrl)
+    .then(function (response) {
+        if(response.ok) {
+            response.json().then(function (data) {
+                for (var i=0;i<data.length;i++) {
+                    // disney btn
+                    if (data[i].name == "Disney+" && data[i].region == "US") {
+                        if (navigator.userAgentData.platform == "Android") {
+                            var disneyAnchor = document.createElement("a");
+                            disneyAnchor.setAttribute("href", data[i].android_url);
+                            disneyAnchor.setAttribute("target", "_blank");
+                            var disneyBtn = document.createElement("button");
+                            disneyBtn.textContent = "Disney+";
+                            disneyBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "disney");
+                            disneyAnchor.appendChild(disneyBtn);
+                            buttonsContainer.appendChild(disneyAnchor);
+                        } else if (navigator.userAgentData.platform == "iOS") {
+                            var disneyAnchor = document.createElement("a");
+                            disneyAnchor.setAttribute("href", data[i].ios_url);
+                            disneyAnchor.setAttribute("target", "_blank");
+                            var disneyBtn = document.createElement("button");
+                            disneyBtn.textContent = "Disney+";
+                            disneyBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "disney");
+                            disneyAnchor.appendChild(disneyBtn);
+                            buttonsContainer.appendChild(disneyAnchor);
+                        } else {
+                            var disneyAnchor = document.createElement("a");
+                            disneyAnchor.setAttribute("href", data[i].web_url);
+                            disneyAnchor.setAttribute("target", "_blank");
+                            var disneyBtn = document.createElement("button");
+                            disneyBtn.textContent = "Disney+";
+                            disneyBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "disney");
+                            disneyAnchor.appendChild(disneyBtn);
+                            buttonsContainer.appendChild(disneyAnchor);
+                        }
+                    // hulu btn
+                    } else if (data[i].name == "Hulu" && data[i].region == "US") {
+                        if (navigator.userAgentData.platform == "Android") {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].android_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "Hulu";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "hulu");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        } else if (navigator.userAgentData.platform == "iOS") {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].ios_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "Hulu";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "hulu");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        } else {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].web_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "Hulu";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "hulu");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        }
+                    // netflix btn
+                    } else if (data[i].name == "Netflix" && data[i].region == "US") {
+                        if (navigator.userAgentData.platform == "Android") {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].android_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "Netflix";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "netflix");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        } else if (navigator.userAgentData.platform == "iOS") {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].ios_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "Netflix";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "netflix");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        } else {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].web_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "Netflix";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "netflix");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        }
+                    // paramount button
+                    } else if (data[i].name == "Paramount+" && data[i].region == "US") {
+                        if (navigator.userAgentData.platform == "Android") {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].android_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "Paramount+";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "paramount");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        } else if (navigator.userAgentData.platform == "iOS") {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].ios_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "Paramount+";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "paramount");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        } else {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].web_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "Paramount+";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "paramount");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        }
+                    // prime btn
+                    } else if (data[i].name == "Amazon Prime" && data[i].region == "US") {
+                        if (navigator.userAgentData.platform == "Android") {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].android_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "Prime";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "prime");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        } else if (navigator.userAgentData.platform == "iOS") {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].ios_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "Prime";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "prime");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        } else {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].web_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "Prime";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "prime");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        }
+                    // hbo btn
+                    } else if (data[i].name == "HBO MAX" && data[i].region == "US") {
+                        if (navigator.userAgentData.platform == "Android") {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].android_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "HBO Max";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "hbo");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        } else if (navigator.userAgentData.platform == "iOS") {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].ios_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "HBO Max";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "hbo");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        } else {
+                            var btnAnchor = document.createElement("a");
+                            btnAnchor.setAttribute("href", data[i].web_url);
+                            btnAnchor.setAttribute("target", "_blank");
+                            var createdBtn = document.createElement("button");
+                            createdBtn.textContent = "HBO Max";
+                            createdBtn.classList.add("column", "button", "is-2", "has-text-weight-bold", "is-size-5", "hbo");
+                            btnAnchor.appendChild(createdBtn);
+                            buttonsContainer.appendChild(btnAnchor);
+                        }
+                    }
+                }
+            })
+        }
+    })
+}
+
 // event listeners
 randomizerBtn.addEventListener("click", randomNumber);
 searchBtn.addEventListener("click", getSearchTerm);
@@ -184,3 +386,5 @@ searchInputEl.addEventListener("keyup", function (event) {
         getSearchTerm();
     }
 })
+
+// https://api.watchmode.com/v1/status/?apiKey=XtDVqWrPdNevd0HMRCFzh8nSvnBpjdpVoazNV42f
