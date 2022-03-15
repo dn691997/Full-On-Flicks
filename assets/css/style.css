@@ -1,0 +1,146 @@
+html body {
+    background-color: black;
+    background-image: linear-gradient(180deg, rgba(40,9,9,0.79) 0%, rgba(0,0,0,0.79) 100%);
+    background-size: cover;
+    font-family: "Montserrat", sans-serif;
+    min-height: 101vh;
+    min-width: 102vw;
+}
+
+.page-title {
+    font-family: "Lobster Two", cursive;
+    text-shadow: 5px 5px 9px rgba(0,0,0,0.89);
+    text-align: center;
+}
+
+header {
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin: .2rem;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.main-info {
+    border-radius: 9px;
+    background-image: linear-gradient(319deg, rgba(40,9,9,0.79) 0%, rgba(0,0,0,0.79) 100%);
+    border: solid 6px;
+    box-shadow: 5px 5px 9px rgba(0,0,0,0.89);
+    padding: 15px;
+    margin: 0px .5rem;
+}
+
+p {
+    margin: 10px 0px;
+}
+
+#search-bar {
+    margin-top: 6px;
+}
+
+#randomizer-btn {
+    border: 2px solid rgba(121,0,0,0.7);
+    background: linear-gradient(146deg, rgba(41,41,41,1) 23%, rgba(0,0,0,1) 49%, rgba(43,43,43,1) 70%);
+    font-weight: bold;
+    box-shadow: 5px 5px 9px rgba(0,0,0,0.89);
+    display: flex;
+    font-size: 1rem;
+}
+
+#movie-title {
+    text-shadow: 5px 5px 9px rgba(0,0,0,0.89);
+    text-align: center;
+    padding: 10px;
+}
+
+.image-holder {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    box-shadow: 5px 5px 9px rgba(0,0,0,0.89);
+    /* margin-left: 11%; */
+    /* margin-right: 50%; */
+    min-width: 20vw;
+    max-width: 20vw;
+}
+
+.where-to-watch {
+    margin-top: 25px;
+}
+
+.is-multiline {
+    display: flex;
+    justify-content: center;
+}
+
+.is-multiline button {
+    margin: .2vw;
+}
+
+/* utility btn classes */
+.hulu {
+    background: linear-gradient(129deg, rgba(80,162,96,1) 0%, rgba(43,255,23,1) 100%);
+    color: white;
+}
+
+.disney {
+    background: linear-gradient(129deg, rgba(97,123,237,1) 0%, rgba(44,24,62,1) 100%);
+    color: white;
+}
+
+.netflix {
+    background: linear-gradient(129deg, rgba(0,0,0,1) 0%, rgba(37,37,37,1) 82%);
+    color: red;
+}
+
+.paramount {
+    background: linear-gradient(36deg, rgba(0,43,121,1) 0%, rgba(124,201,255,1) 82%);
+    color: white;
+}
+
+.prime {
+    background: linear-gradient(36deg, rgba(83,83,83,1) 0%, rgba(33,33,33,1) 82%);
+    color: cyan
+}
+
+.hbo {
+    background: linear-gradient(146deg, rgba(115,44,207,1) 23%, rgba(11,154,191,1) 49%, rgba(94,47,203,1) 70%);
+    color: white;
+}
+
+/* class for btns of random services */
+/* .other-service {
+    background: linear-gradient(146deg, rgba(41,41,41,1) 23%, rgba(0,0,0,1) 49%, rgba(43,43,43,1) 70%);
+    color: white;
+} */
+
+@media screen and (max-width: 1435px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .is-multiline button {
+        margin: 1vw;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .image {
+        min-width: 22vw;
+        max-width: 44vw;
+    }
+}
