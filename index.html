@@ -1,78 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/script.js" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script src="./assets/script.js" defer></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full On Flicks</title>
-  </head>
-  <body>
-    <div class="title-bar">
-      <div class="title-bar-left">
-        <button class="menu-icon" type="button"></button>
-        <span class="title-bar-title">Foundation</span>
-      </div>
-      <div class="title-bar-right">
-        <button class="menu-icon" type="button"></button>
-      </div>
-    </div>
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="dropdown menu" data-dropdown-menu>
-          <li class="menu-text">Site Title</li>
-          <li class="has-submenu">
-            <a href="#0">One</a>
-            <ul class="submenu menu vertical" data-submenu>
-              <li><a href="#0">One</a></li>
-              <li><a href="#0">Two</a></li>
-              <li><a href="#0">Three</a></li>
-            </ul>
-          </li>
-          <li><a href="#0">Two</a></li>
-          <li><a href="#0">Three</a></li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><input type="search" placeholder="Search" /></li>
-          <li><button type="button" class="button">Search</button></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <h1 class="">Movie Tittle</h1>
-    </div>
-    <div>
-      <div class="media-object">
-        <div class="media-object-section">
-          <img src="https://placeimg.com/200/200/people" alt="movie image" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Montserrat:wght@200;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header class="columns is-vcentered is-multiline">
+        <!-- page title -->
+        <div class="column is-3">
+            <h1 class="page-title title is-1 has-text-white-bis has-text-weight-bold center">🍿 Full On Flicks 🎥</h1>
         </div>
-        <div class="media-object-section">
-          <h4>Movies details</h4>
-          <p>cast member</p>
-          <p>director</p>
-          <p>Made Date</p>
-          <h4>Stream on</h4>
-          <p>show available platform</p>
+        <!-- input div -->
+        <div class="column is-6">
+            <div class="columns">
+                <!-- input field -->
+                <input id="search-bar" type="text" placeholder="Search for a Movie or TV Series" class="input has-text-black is-medium is-9"/>
+                <div class="is-3">
+                  <!-- search btn -->
+                  <button id="search-btn" class="button navbar-item has-text-white has-text-primary-light is-danger is-medium is-12">Search</button>
+                </div>
+              </div>
         </div>
-      </div>
-    </div>
-    <img
-      data-interchange="[assets/img/interchange/small.jpg, small], [assets/img/interchange/medium.jpg, medium], [assets/img/interchange/large.jpg, large]"
-      src="#"
-      alt=""
-    />
-  </body>
+        <!-- choose for me div -->
+        <div class="column is-3">
+            <div class="columns">
+              <!-- choose for me btn -->
+              <button id="randomizer-btn" class="button column is-black has-text-danger-dark has-text-primary-light is-large is-half is-offset-one-quarter">Choose for Me</button>
+            </div>
+        </div>
+    </header>
+    <!-- main section -->
+    <main>
+        <!-- movie title -->
+        <section>
+            <div class="columns">
+                <div class="column is-vcentered is-half is-offset-one-quarter">
+                    <h1 id="movie-title" class="has-text-weight-bold has-text-white-bis title is-1">Inception (2010)</h1>
+                </div>
+            </div>
+        </section>
+        <!-- movie info -->
+        <section class="section is-small">
+            <div class="columns">
+                <div class="column is-4 center">
+                    <!-- posterEl -->
+                    <div class="columns">
+                        <div class="column image-holder">
+                            <img frameborder="0" src="https://imdb-api.com/images/original/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_Ratio0.6762_AL_.jpg" alt="Movie Poster" id="poster" class="image"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-8 has-text-left">
+                    <div class="container main-info">
+                        <h2 class="subtitle has-text-danger-dark has-text-weight-bold is-3">Plot</h2>
+                        <!-- taglineEl -->
+                        <p class="is-size-5 has-text-danger"><i id="tagline">"Your mind is the scene of the crime"</i></p>
+                        <!-- plot paragraph -->
+                        <p id="plot" class="is-size-5 has-text-white-bis">Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible, inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea, but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming.</p>
+                        <div class="columns">
+                            <!-- append cast to this next element -->
+                            <div class="column">
+                              <h2 class="subtitle has-text-danger-dark has-text-weight-bold is-size-3">Cast</h2>
+                              <div class="columns is-flex-wrap-wrap is-justify-content-space-evenly" id="cast-list">
+                                <a href="https://www.imdb.com/name/nm0000138/" target="_blank">
+                                  <figure>
+                                    <img src="https://imdb-api.com/images/original/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_Ratio1.0000_AL_.jpg" alt="Leonardo DiCaprio" width="128px"/>
+                                    <figcaption>Leonardo<br/>DiCaprio</figcaption>
+                                  </figure>
+                                </a>
+                                <a href="https://www.imdb.com/name/nm0330687/" target="_blank">
+                                  <figure>
+                                    <img src="https://imdb-api.com/images/original/MV5BMTY3NTk0NDI3Ml5BMl5BanBnXkFtZTgwNDA3NjY0MjE@._V1_Ratio1.0000_AL_.jpg" alt="Leonardo DiCaprio" width="128px"/>
+                                    <figcaption>Joseph<br/>Gordon-Levitt</figcaption>
+                                  </figure>
+                                </a>
+                                <a href="https://www.imdb.com/name/nm0680983/" target="_blank">
+                                  <figure>
+                                    <img src="https://imdb-api.com/images/original/MV5BYWY0NzFmYjAtYzMwNC00ODc3LWI2ZWEtOTU3YTM0Y2ZiNTM5XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_Ratio1.0000_AL_.jpg" alt="Leonardo DiCaprio" width="128px"/>
+                                    <figcaption>Elliot<br/>Page</figcaption>
+                                  </figure>
+                                </a>
+                                <a href="https://www.imdb.com/name/nm0913822/" target="_blank">
+                                  <figure>
+                                    <img src="https://imdb-api.com/images/original/MV5BMTQzMTUzNjc4Nl5BMl5BanBnXkFtZTcwMTUyODU2Mw@@._V1_Ratio1.0000_AL_.jpg" alt="Leonardo DiCaprio" width="128px"/>
+                                    <figcaption>Ken<br/>Watanabe</figcaption>
+                                  </figure>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="column">
+                                <h2 class="subtitle has-text-danger-dark has-text-weight-bold is-size-3">Info</h2>
+                                <h4 class="subtitle has-text-grey-lighter is-size-5" id="direction">Direction:</h4>
+                                <div class="content">
+                                  <ul id="directors-list">
+                                    <li class="has-text-white-bis is-size-6">Christopher Nolan</li>
+                                  </ul>
+                                </div>
+                                <h4 class="subtitle has-text-grey-lighter is-size-5" id="writers">Writers:</h4>
+                                <!-- writers list container -->
+                                <div class="content">
+                                  <ul id="writers-list">
+                                    <li class="has-text-white-bis is-size-6">Christopher Nolan</li>
+                                  </ul>
+                                </div>
+                                <h4 id="rating" class="subtitle has-text-grey-lighter is-size-4 has-text-weight-bold">PG-13</h4>
+                                <h4 id="run-time" class="subtitle has-text-grey-lighter is-size-5">Runtime: <span id="runtime"  class="has-text-weight-bold">2h 28min</span></h4>
+                                <h4 id="meta-critic" class="subtitle has-text-grey-lighter is-size 5">MetaCritic Score: <span id="metacritic" class="has-text-weight-bold">74</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- where to watch div -->
+                    <div class="container main-info where-to-watch">
+                        <h3 class="subtitle has-text-danger-dark has-text-weight-bold is-3">Where to Watch</h3>
+                        <div id="btn-container" class="columns is-multiline">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+  <script src="./assets/js/script.js"></script>
+</body>
 </html>
