@@ -2,11 +2,18 @@
 
 var movieTitleEl = document.getElementById("movie-title");
 var posterEl = document.getElementById("poster");
+var taglineEl = document.getElementById("tagline")
 var plotEl = document.getElementById("plot");
 var castListEl = document.getElementById("cast-list");
 var searchInputEl = document.getElementById("search-bar");
 var searchBtn = document.getElementById("search-btn");
 var randomizerBtn = document.getElementById("random-btn");
+var directorsEl = document.getElementById("directors-list");
+var writersEl = document.getElementById("writers-list");
+var ratingEl = document.getElementById("rating");
+var runtimeEl = document.getElementById("runtime");
+var metacriticEl = document.getElementById("metacritic");
+var buttonsContainer = document.getElementById("btn-container");
 
 var getSearchTerm = function () {
     var searchTerm = searchInputEl.value;
@@ -45,11 +52,28 @@ var getMovieInfo = function (titleId) {
     .then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
-                console.log(data.image);
+                castListEl.innerHTML = "";
                 posterEl.setAttribute("src", data.image)
                 movieTitleEl.textContent = data.fullTitle;
                 plotEl.textContent = data.plot;
+                taglineEl.textContent = data.tagline;
+                
+                if (data.actorList[0]) {
+                    for (var i = 0; i < 6; i++) {
+                        var castMemberName = data.actorList[i].name;
+                        var castMemberId = data.actorList[i].id;
+                        var castMemberImage = data.actorList[i].image;
 
+                        // create anchor element with it's inner html elements
+                        var castAnchorEl = document.createElement("a");
+                        castAnchorEl.setAttribute("src", "https://www.imdb.com/name/" + castMemberId + "/");
+                        castAnchorEl.setAttribute("target", "_blank");
+                        castAnchorEl.innerHTML = "<figure><img src='" + castMemberImage + "' alt='" + castMemberName + "' width='128px'/><figcaption>Leonardo<br/>DiCaprio</figcaption></figure>";
+                        castListEl.appendChild(castAnchorEl);
+                    } 
+                } else {
+                    castListEl.textContent = "No cast to display";
+                }
             })
         }
     })
