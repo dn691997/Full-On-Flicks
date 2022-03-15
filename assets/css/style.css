@@ -43,13 +43,16 @@ single-spaced * {
 
 .hero {
   background: black url(../images/wallpaper\ 2.jpg) center / cover;
+  opacity: 0.95;
 }
 .wallpaper2 {
-  background-image: url(../images/wallpaper\ 1.jpg);
+  background: black url(../images/wallpaper\ 1.jpg) center / cover;
+  opacity: 0.95;
 }
 
 .wallpaper {
-    background-image: url(../images/2000082.jpg) ;
-    background-position: center;
-    background-size: cover;
+  background-image: url(../images/2000082.jpg);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.85;
 }
