@@ -106,9 +106,9 @@ var getTitleInfo = function (titleId) {
                     directionTitle.classList.add("is-invisible")
                 }
                 // writers list
-                if (data.writerList[0]) {
+                if (data.writerList.length > 0) {
                     writerTitle.classList.remove("is-invisible")
-                    for (var i=0; i<data.writerList;i++) {
+                    for (var i=0; i<data.writerList.length;i++) {
                         var writer = document.createElement("li");
                         writer.classList.add("has-text-white-bis", "is-size-6");
                         writer.textContent = data.writerList[i].name;
@@ -126,7 +126,7 @@ var getTitleInfo = function (titleId) {
                 }
 
                 if (data.runtimeStr) {
-                    runtimeEl.classList.remove("is-invisible")
+                    runtimeTitle.classList.remove("is-invisible")
                     runtimeEl.textContent = data.runtimeStr
                 } else {
                     runtimeTitle.classList.add("is-invisible")

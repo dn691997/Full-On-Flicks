@@ -46,6 +46,10 @@ p {
     margin: 10px 0px;
 }
 
+#search-bar {
+    margin-top: 6px;
+}
+
 #randomizer-btn {
     border: 2px solid rgba(121,0,0,0.7);
     background: linear-gradient(146deg, rgba(41,41,41,1) 23%, rgba(0,0,0,1) 49%, rgba(43,43,43,1) 70%);
