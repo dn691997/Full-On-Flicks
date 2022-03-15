@@ -59,7 +59,8 @@
                 <div class="column is-8 has-text-left">
                     <div class="container main-info">
                         <h2 class="subtitle has-text-danger-dark has-text-weight-bold is-3">Plot</h2>
-                        <p id="tagline" class="is-size-5 has-text-danger"><i>"Your mind is the scene of the crime"</i></p>
+                        <!-- taglineEl -->
+                        <p class="is-size-5 has-text-danger"><i id="tagline">"Your mind is the scene of the crime"</i></p>
                         <!-- plot paragraph -->
                         <p id="plot" class="is-size-5 has-text-white-bis">Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible, inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea, but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming.</p>
                         <div class="columns">
@@ -95,13 +96,13 @@
                             </div>
                             <div class="column">
                                 <h2 class="subtitle has-text-danger-dark has-text-weight-bold is-size-3">Info</h2>
-                                <h4 class="subtitle has-text-grey-lighter is-size-5">Direction:</h4>
+                                <h4 class="subtitle has-text-grey-lighter is-size-5" id="direction">Direction:</h4>
                                 <div class="content">
                                   <ul id="directors-list">
                                     <li class="has-text-white-bis is-size-6">Christopher Nolan</li>
                                   </ul>
                                 </div>
-                                <h4 class="subtitle has-text-grey-lighter is-size-5">Writers:</h4>
+                                <h4 class="subtitle has-text-grey-lighter is-size-5" id="writers">Writers:</h4>
                                 <!-- writers list container -->
                                 <div class="content">
                                   <ul id="writers-list">
@@ -109,8 +110,8 @@
                                   </ul>
                                 </div>
                                 <h4 id="rating" class="subtitle has-text-grey-lighter is-size-4 has-text-weight-bold">PG-13</h4>
-                                <h4 id="runtime" class="subtitle has-text-grey-lighter is-size-5">Runtime: <span class="has-text-weight-bold">2h 28min</span></h4>
-                                <h4 class="subtitle has-text-grey-lighter is-size 5">MetaCritic Score: <span id="metacritic" class="has-text-weight-bold">74</span></h4>
+                                <h4 id="run-time" class="subtitle has-text-grey-lighter is-size-5">Runtime: <span id="runtime"  class="has-text-weight-bold">2h 28min</span></h4>
+                                <h4 id="meta-critic" class="subtitle has-text-grey-lighter is-size 5">MetaCritic Score: <span id="metacritic" class="has-text-weight-bold">74</span></h4>
                             </div>
                         </div>
                     </div>
@@ -131,5 +132,6 @@
             </div>
         </section>
     </main>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
