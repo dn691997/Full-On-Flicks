@@ -1,4 +1,5 @@
 // imdb regular api key = k_ix11kdvq
+// imdb test key_02 = k_8g8gu1xp
 // watchmode api key = XtDVqWrPdNevd0HMRCFzh8nSvnBpjdpVoazNV42f
 
 // dom variables
