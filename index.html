@@ -10,55 +10,33 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
     <!-- google fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Montserrat:wght@200;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-  </head>
-  <body>
-    <header class="columns is-vcentered is-multiline">
-      <!-- page title -->
-      <div class="column is-3">
-        <h1
-          class="page-title title is-1 has-text-white-bis has-text-weight-bold center"
-        >
-          🍿 Full On Flicks 🎥
-        </h1>
-      </div>
-      <!-- input div -->
-      <div class="column is-6">
-        <div class="columns">
-          <!-- input field -->
-          <input
-            id="search-bar"
-            type="text"
-            placeholder="Search for a Movie or TV Series"
-            class="input has-text-black is-medium is-9"
-            list="searchdata"
-          />
-          <div class="is-3">
-            <!-- search btn -->
-            <button
-              id="search-btn"
-              class="button navbar-item has-text-white has-text-primary-light is-danger is-medium is-12 search"
-            >
-              Search
-            </button>
-          </div>
-          <datalist id="searchdata"></datalist>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Montserrat:wght@200;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header class="is-flex is-flex-direction-row  is-multiline">
+        <!-- page title -->
+        <div class=" p-1 is-flex-wrap-wrap ">
+            <h1 class="page-title title is-1 has-text-white-bis has-text-weight-bold center">🍿 Full On Flicks 🎥</h1>
         </div>
-      </div>
-      <!-- choose for me div -->
-      <div class="column is-3">
-        <div class="columns">
-          <!-- choose for me btn -->
-          <button
-            id="randomizer-btn"
-            class="button column is-black has-text-danger-dark has-text-primary-light is-large is-half is-offset-one-quarter"
-          >
-            Choose for Me
-          </button>
+        <!-- input div -->
+        <div class=" p-6 is-flex-wrap-wrap is-6">
+            <div class="columns">
+                <!-- input field -->
+                <input id="search-bar" type="text" placeholder="Search for a Movie or TV Series" class="input has-text-black is-medium is-9" list="searchdata"/>
+                <div class="">
+                  <!-- search btn -->
+                  <button id="search-btn" class="button  has-text-white has-text-primary-light is-danger is-medium is-9 search">Search</button>
+                </div>
+              </div>
+              <datalist id="searchdata"></datalist>
+        </div>
+        <!-- choose for me div -->
+        <div class="p-auto is-flex-wrap-wrap ">
+            <div class="">
+              <!-- choose for me btn -->
+              <button id="randomizer-btn" class="button is-black has-text-danger-dark has-text-primary-light is-large is-half is-offset-one-quarter">Choose for Me</button>
+            </div>
         </div>
       </div>
     </header>
