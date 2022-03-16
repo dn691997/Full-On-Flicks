@@ -79,7 +79,7 @@ var getTitleInfo = function (titleId) {
               // create anchor element with it's inner html elements
               var castAnchorEl = document.createElement("a");
               castAnchorEl.setAttribute(
-                "src",
+                "href",
                 "https://www.imdb.com/name/" + castMemberId + "/"
               );
               castAnchorEl.setAttribute("target", "_blank");
