@@ -378,21 +378,6 @@ document.querySelector(".input").addEventListener("focus", () => {
   });
 });
 
-function searchInputVal() {
-  document.querySelector(".search").value.addEventListener("keyup", () => {
-    searchHistory.push(document.querySelector(".input").value);
-    localStorage.searchHistory = JSON.stringify(searchHistory);
-  });
-  document.querySelector(".input").addEventListener("focus", () => {
-    var data = document.querySelector("datalist#searchdata");
-    data.innerHTML = "";
-    searchHistory.forEach((search) => {
-      data.innerHTML = "<option>" + data.innerHTML;
-      data.querySelector("option").innerText = search;
-    });
-  });
-}
-
 // event listeners
 randomizerBtn.addEventListener("click", randomNumber);
 searchBtn.addEventListener("click", getSearchTerm);
