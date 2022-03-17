@@ -90,7 +90,7 @@ var getTitleInfo = function (titleId) {
     
                             // create anchor element with it's inner html elements
                             var castAnchorEl = document.createElement("a");
-                            castAnchorEl.setAttribute("src", "https://www.imdb.com/name/" + castMemberId + "/");
+                            castAnchorEl.setAttribute("href", "https://www.imdb.com/name/" + castMemberId + "/");
                             castAnchorEl.setAttribute("target", "_blank");
                             castAnchorEl.innerHTML = "<figure><img src='" + castMemberImage + "' alt='" + castMemberName + "' width='128px'/><figcaption>" + formattedName + "</figcaption></figure>";
                             castListEl.appendChild(castAnchorEl);
