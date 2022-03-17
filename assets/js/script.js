@@ -3,6 +3,7 @@
 // watchmode api key = XtDVqWrPdNevd0HMRCFzh8nSvnBpjdpVoazNV42f
 
 // dom variables
+var mainEl = document.querySelector("main");
 var movieTitleEl = document.getElementById("movie-title");
 var posterEl = document.getElementById("poster");
 var taglineEl = document.getElementById("tagline")
@@ -28,7 +29,13 @@ var getSearchTerm = function () {
     if (searchTerm) {
         getTitleId(searchTerm)
     } else {
-        alert("Please enter a valid search")
+        var errorMsg = document.createElement("p");
+        errorMsg.textContent = "*ERROR: Please enter a search term*";
+        errorMsg.classList.add("title", "is-5", "has-text-danger", "has-text-centered");
+        mainEl.insertBefore(errorMsg, mainEl.firstChild);
+        setTimeout(() => {
+            errorMsg.remove();
+        }, 5000);
     }
 }
 
@@ -170,7 +177,13 @@ var getRandomMovie = function (number) {
                 getTitleInfo(movieId);
             })
         } else {
-            alert("There was a problem with your request, please try again")
+            var errorMsg = document.createElement("p");
+            errorMsg.textContent = "*There was a problem with your request, please try again*";
+            errorMsg.classList.add("title", "is-5", "has-text-danger", "has-text-centered");
+            mainEl.insertBefore(errorMsg, mainEl.firstChild);
+            setTimeout(() => {
+                errorMsg.remove();
+            }, 5000);
         }
     })
 }
@@ -184,7 +197,13 @@ var getRandomTV = function (number) {
                 getTitleInfo(showId);
             })
         } else {
-            alert("There was a problem with your request, please try again")
+            var errorMsg = document.createElement("p");
+            errorMsg.textContent = "*There was a problem with your request, please try again*";
+            errorMsg.classList.add("title", "is-5", "has-text-danger", "has-text-centered");
+            mainEl.insertBefore(errorMsg, mainEl.firstChild);
+            setTimeout(() => {
+                errorMsg.remove();
+            }, 5000);
         }
     })
 }
