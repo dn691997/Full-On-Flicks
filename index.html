@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Full On Flicks</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
     <!-- google fonts -->
@@ -11,27 +11,27 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <header class="columns is-vcentered is-multiline">
+    <header class="is-flex is-flex-direction-row  is-multiline">
         <!-- page title -->
-        <div class="column is-3">
+        <div class=" p-1 is-flex-wrap-wrap ">
             <h1 class="page-title title is-1 has-text-white-bis has-text-weight-bold center">🍿 Full On Flicks 🎥</h1>
         </div>
         <!-- input div -->
-        <div class="column is-6">
+        <div class=" p-6 is-flex-wrap-wrap is-6">
             <div class="columns">
                 <!-- input field -->
                 <input id="search-bar" type="text" placeholder="Search for a Movie or TV Series" class="input has-text-black is-medium is-9"/>
-                <div class="is-3">
+                <div class="">
                   <!-- search btn -->
-                  <button id="search-btn" class="button navbar-item has-text-white has-text-primary-light is-danger is-medium is-12">Search</button>
+                  <button id="search-btn" class="button  has-text-white has-text-primary-light is-danger is-medium is-9">Search</button>
                 </div>
               </div>
         </div>
         <!-- choose for me div -->
-        <div class="column is-3">
-            <div class="columns">
+        <div class="p-auto is-flex-wrap-wrap ">
+            <div class="">
               <!-- choose for me btn -->
-              <button id="randomizer-btn" class="button column is-black has-text-danger-dark has-text-primary-light is-large is-half is-offset-one-quarter">Choose for Me</button>
+              <button id="randomizer-btn" class="button is-black has-text-danger-dark has-text-primary-light is-large is-half is-offset-one-quarter">Choose for Me</button>
             </div>
         </div>
     </header>
@@ -119,11 +119,18 @@
                     <div class="container main-info where-to-watch">
                         <h3 class="subtitle has-text-danger-dark has-text-weight-bold is-3">Where to Watch</h3>
                         <div id="btn-container" class="columns is-multiline">
+                          <a href="https://play.hbomax.com/feature/urn:hbo:feature:GYDbfcQGssU-dEAEAAAAI" target="_blank" class="column button is-2 has-text-weight-bold is-size-5 hbo">
+                            <div>HBO Max</div>
+                          </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- watchmode attribution -->
+        <div class="watchmode">
+          <a href="https://watchmode.com" target="_blank">Built with Watchmode</a>
+        </div>
     </main>
   <script src="./assets/js/script.js"></script>
 </body>
