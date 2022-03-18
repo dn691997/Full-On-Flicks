@@ -3,6 +3,7 @@
 // watchmode api key = XtDVqWrPdNevd0HMRCFzh8nSvnBpjdpVoazNV42f
 
 // dom variables
+var mainEl = document.querySelector("main");
 var movieTitleEl = document.getElementById("movie-title");
 var posterEl = document.getElementById("poster");
 var taglineEl = document.getElementById("tagline");
@@ -23,14 +24,20 @@ var metaCritic = document.getElementById("meta-critic");
 var runtimeTitle = document.getElementById("run-time");
 
 var getSearchTerm = function () {
-  var searchTerm = searchInputEl.value;
-  searchInputEl.value = "";
-  if (searchTerm) {
-    getTitleId(searchTerm);
-  } else {
-    alert("Please enter a valid search");
-  }
-};
+    var searchTerm = searchInputEl.value;
+    searchInputEl.value = "";
+    if (searchTerm) {
+        getTitleId(searchTerm)
+    } else {
+        var errorMsg = document.createElement("p");
+        errorMsg.textContent = "*ERROR: Please enter a search term*";
+        errorMsg.classList.add("title", "is-5", "has-text-danger", "has-text-centered");
+        mainEl.insertBefore(errorMsg, mainEl.firstChild);
+        setTimeout(() => {
+            errorMsg.remove();
+        }, 5000);
+    }
+}
 
 var getTitleId = function (searchTerm) {
   var apiURL =
@@ -76,6 +83,7 @@ var getTitleInfo = function (titleId) {
               var castMemberImage = data.actorList[i].image;
               // tool to split up name
               var formattedName = castMemberName.replaceAll(" ", "<br/>");
+
 
               // create anchor element with it's inner html elements
               var castAnchorEl = document.createElement("a");
